@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      padding: 0;
+    }
+    .wrap {
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+    }
+    .parent {
+      position: relative;
+      top: 100px;
+      left: 100px;
+      width: 100px;
+      height: 100px;
+      border: 10px solid #ccc;
+      /* margin: 20px; */
+    }
+    .son {
+      background-color: antiquewhite;
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      width: 200px;
+      height: 200px;
+      margin: 20px;
+      border: 10px solid #ccc;
+    }
+
+    .parent-1 {
+      direction: rtl;
+      /* box-sizing: border-box; */
+      width: 100px;
+      height: 100px;
+      padding: 20px;
+      border: 10px solid #ccc;
+      overflow: auto;
+    }
+    .son-1 {
+      background-color: antiquewhite;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="content">
+      <!-- <div class="parent">
+        <div class="son"></div>
+      </div> -->
+      <div class="parent-1">
+        <div class="son-1"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // https://juejin.im/entry/59772e9ef265da6c322e24f9
+
+    console.dir(`window相关宽高属性`)
+    // 浏览器窗口高度，不包括控制台 地址栏状态栏
+    console.log(`window.innerHeight `, window.innerHeight)
+    console.log(`window.innerWidth `, window.innerWidth)
+
+    // 浏览器窗口 ，什么都包括 外加浏览器的四周边框
+    console.log(`window.outerHeight `, window.outerHeight)
+    console.log(`window.outerWidth `, window.outerWidth)
+
+
+    console.dir(`window.screen相关宽高属性`)
+    // 电脑屏幕的宽高
+    console.log(`window.screen.height `, window.screen.height)
+    console.log(`window.screen.width `, window.screen.width)
+
+    // 电脑屏幕的宽高，除去屏幕上的任务栏
+    console.log(`window.screen.availHeight `, window.screen.availHeight)
+    console.log(`window.screen.availWidth `, window.screen.availWidth)
+
+    // 浏览器窗口距离电脑屏幕左上角距离
+    console.log(`window.screenX `, window.screenX)
+    console.log(`window.screenLeft `, window.screenLeft)
+    console.log(`window.screenY `, window.screenY)
+    console.log(`window.screenTop `, window.screenTop)
+
+    console.dir(`window.document相关宽高属性(offset/client/scroll)`)
+    
+    // 滚动条的宽度
+    console.log(`滚动条 `, window.innerWidth - document.body.clientWidth)
+    // chrome 默认padding宽度
+    // 元素的自己宽度，高度就是box-sizing: content-box,指的是内容的宽高+ padding * 2，不包括 border margin 滚动条
+    console.log(`document.body.clientHeight `,document.body.clientHeight)
+    console.log(`document.body.clientWidth `,document.body.clientWidth)
+    console.log(`document.getElementsByClassName('parent-1').clientHeight `,document.getElementsByClassName('parent-1')[0].clientHeight)
+    console.log(`document.getElementsByClassName('parent-1').clientWidth `,document.getElementsByClassName('parent-1')[0].clientWidth)
+    // 元素自己的border + 滚动条
+    console.log(`document.getElementsByClassName('parent-1').clientLeft `,document.getElementsByClassName('parent-1')[0].clientLeft)
+    console.log(`document.getElementsByClassName('parent-1').clientTop `,document.getElementsByClassName('parent-1')[0].clientTop)
+
+
+    // content + padding + 滚动条 + border
+    console.log(`document.getElementsByClassName('parent-1').offsetHeight `,document.getElementsByClassName('parent-1')[0].offsetHeight)
+    console.log(`document.getElementsByClassName('parent-1').offsetWidth `,document.getElementsByClassName('parent-1')[0].offsetWidth)
+    // 这两个属性是相对于offsetParent的，left + 当前元素的margin-left
+    console.log(`document.getElementsByClassName('son').offsetLeft `,document.getElementsByClassName('son')[0].offsetLeft)
+    console.log(`document.getElementsByClassName('son').offsetTop `,document.getElementsByClassName('son')[0].offsetTop)
+    
+    console.dir(`1个元素的 scrollTop 值是这个元素的顶部到视口可见内容（的顶部）的距离的度量`)
+    console.log(`document.getElementsByClassName('son-1')[0].scrollHeight `,document.getElementsByClassName('son-1')[0].scrollHeight)
+    console.log(`document.getElementsByClassName('son-1')[0].scrollWidth `,document.getElementsByClassName('son-1')[0].scrollWidth)
+    console.log(`document.getElementsByClassName('son-1')[0].scrollLeft `,document.getElementsByClassName('son-1')[0].scrollLeft)
+    console.log(`document.getElementsByClassName('son-1')[0] .scrollTop `,document.getElementsByClassName('son-1')[0].scrollTop)
+
+    console.log(`document.getElementsByClassName('parent-1')[0].scrollLeft `,document.getElementsByClassName('parent-1')[0].scrollLeft)
+    console.log(`document.getElementsByClassName('parent-1')[0] .scrollTop `,document.getElementsByClassName('parent-1')[0].scrollTop)
+    // 当给元素设置scrollTop时，元素自身必须有滚动条，overflow:auto，所以parent-1是对的，son-1是错的
+  </script>
+</body>
+</html>
