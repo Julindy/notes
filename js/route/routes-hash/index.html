@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#/">turn yellow</a></li>
+      <li><a href="#/blue">turn blue</a></li>
+      <li><a href="#/green">turn green</a></li>
+    </ul>
+    <button>back</button>
+    <script>
+      window.Router = new Routers()
+      const content = document.querySelector("body")
+      const button = document.querySelector("button")
+      function changeBgColor(color) {
+        content.style.backgroundColor = color
+      }
+
+      Router.route("/", function() {
+        changeBgColor("yellow")
+      })
+      Router.route("/blue", function() {
+        changeBgColor("blue")
+      })
+      Router.route("/green", function() {
+        changeBgColor("green")
+      })
+      button.addEventListener("click", Router.backOff, false)
+    </script>
+  </body>
+</html>
