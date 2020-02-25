@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>1</div>
+    <script>
+      // b.html
+      console.log(`b.html`,4000)
+      window.onmessage = function(e) {
+        console.log(`b.html`,e.data) //我爱你
+        e.source.postMessage("我不爱你", e.origin)
+      }
+    </script>
+  </body>
+</html>
