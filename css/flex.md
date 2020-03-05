@@ -1,7 +1,7 @@
 ## flex属性一览
 ### 容器属性
 - flex-flow
-  >`flex-flow = flex-direction + flex-wrap`; `flex-flow: row nowrap;`
+  >`flex-flow = flex-direction + flex-wrap`; <br>`flex-flow: row nowrap;`
 - flex-direction
   >`flex-direction:row | column | row-reverse | column-reverse`修改主轴的方向，元素在主轴上排列
 - flex-wrap
