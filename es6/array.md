@@ -1,7 +1,7 @@
 1. 扩展运算符(...)：转换数组为用逗号分隔的参数序列([...arr]，相当于rest/spread参数的逆运算)
 2. Array.from()：转换具有Iterator接口的数据结构为真正数组，返回新数组
-- 类数组对象：包含length的对象、Arguments对象、NodeList对象
-- 可遍历对象：String、Set结构、Map结构、Generator函数
+    - 类数组对象：包含length的对象、Arguments对象、NodeList对象
+    - 可遍历对象：String、Set结构、Map结构、Generator函数
 3. `Array.of()`：转换一组值为真正数组，返回新数组
 4. `copyWithin()`：把指定位置的成员复制到其他位置，返回原数组
 5. `find()`：返回第一个符合条件的成员

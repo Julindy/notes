@@ -10,7 +10,7 @@
 >也就是说，遍历器对象本质上，就是一个指针对象。
 )`：不使用，配合Generator函数使用
 ### 部署
-默认部署在`Symbol.iterator`(具备此属性被认为可遍历的iterable)
+>默认部署在`Symbol.iterator`(具备此属性被认为可遍历的iterable)
 ### 数据结构
 - 集合：Array、Object、Set、Map
 - 原生具备接口的数据结构：String、Array、Set、Map、TypedArray、Arguments、NodeList
