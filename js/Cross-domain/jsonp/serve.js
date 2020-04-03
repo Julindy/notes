@@ -1,5 +1,10 @@
-//server1.js
-let express = require('express');
-let app = express();
-app.use(express.static(__dirname));
-app.listen(3000);
+// server.js
+let express = require('express')
+let app = express()
+app.get('/say', function(req, res) {
+  let { wd, callback } = req.query
+  console.log(wd) // Iloveyou
+  console.log(callback) // show
+  res.end(`${callback}('我不爱你')`)
+})
+app.listen(3000)
