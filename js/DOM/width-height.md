@@ -1,17 +1,21 @@
 
 ## 1.高度和宽度  
 
-> box-sizing:content-box
 ### 1.clientWidth clientHeight
-- clientWidth = content- 滚动条宽度(17px) + padding * 2
+- clientWidth = content + padding * 2 - 滚动条宽度(17px)
+- border以内（不算border），除去滚动条的宽度。
+- 和子元素无关。
+- $('').innerWidth() - 滚动条宽度
+- 滚动条宽度 = $('').innerWidth() - clientWidth
 
-> 导致这个属性用处不大
-
-### 2.offsetWidth offstHeight
+### 2.offsetWidth offsetHeight
 - offsetWidth = content + padding * 2 + border * 2
+- 和子元素无关。
+- $('').outerWidth()
 
 ### 3.scrollWidth scrollHeight
-- 当前元素是否有横向滚动条，有：当前元素padding * 2 + 子元素margin * 2 + border * 2 + padding * 2 + content；没有：当前元素padding * 2 + content
+- 有滚动条：当前元素padding * 2 + 子元素margin * 2 + border * 2 + padding * 2 + content；
+- 没有滚动条：则其scrollWidth等于clientWidth
 
 ### 4.window.innerWidth
 - 浏览器显示代码区域宽度
